@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background:#0c0c14;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="John Sunderland — pianist performing Mozart, Beethoven and Schubert. Available for recitals, concert tours and cultural events. Currently on tour with soprano Elisabet Strid.">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="John Sunderland — pianist performing Mozart, Beethoven and Schubert. Available for recitals, concert tours and cultural events.">
   <title>John Sunderland — Pianist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,32 +18,34 @@
       --cream:    #f2ede4;
       --gold:     #c5a14a;
       --gold-dim: #8a6f32;
-      --grey:     #9a9080;
+      --grey:     #b0a898;
       --rule:     rgba(197,161,74,0.25);
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--cream);
+    html, body {
+      background-color: #0c0c14 !important;
+      color: #f2ede4;
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
     }
 
-    /* ── HERO — mobile first ── */
+    /* Force dark on everything */
+    * { background-color: transparent; }
+
+    /* ── HERO ── */
     .hero {
       display: flex;
       flex-direction: column;
+      background-color: #0c0c14;
     }
 
-    /* Photo sits at top on mobile, full width */
     .hero__photo {
       width: 100%;
-      height: 75vw;
-      max-height: 520px;
+      height: 130vw;
+      max-height: 780px;
       overflow: hidden;
       flex-shrink: 0;
     }
@@ -51,23 +54,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 45%;
       display: block;
       filter: brightness(0.9) contrast(1.05);
     }
 
     .hero__text {
       padding: 48px 32px 64px;
-      background: var(--bg);
+      background-color: #0c0c14 !important;
     }
 
     .hero__eyebrow {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
       font-size: 0.7rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #c5a14a;
       margin-bottom: 20px;
     }
 
@@ -75,48 +77,35 @@
       font-size: clamp(3.2rem, 12vw, 5rem);
       font-weight: 300;
       line-height: 1.05;
-      color: var(--cream);
+      color: #f2ede4;
       margin-bottom: 14px;
     }
 
     .hero__instrument {
       font-size: clamp(1.3rem, 4vw, 1.6rem);
       font-style: italic;
-      color: var(--gold);
-      font-weight: 300;
+      color: #c5a14a;
       margin-bottom: 32px;
     }
 
     .hero__rule {
       width: 48px;
       height: 1px;
-      background: var(--gold-dim);
+      background-color: #8a6f32 !important;
       margin-bottom: 32px;
     }
 
     .hero__tagline {
       font-size: clamp(1.15rem, 3.5vw, 1.35rem);
-      color: var(--grey);
+      color: #b0a898;
       font-style: italic;
       line-height: 1.85;
     }
 
-    /* ── Desktop: side by side ── */
     @media (min-width: 800px) {
-      .hero {
-        flex-direction: row;
-        min-height: 100vh;
-      }
-      .hero__photo {
-        width: 50%;
-        height: auto;
-        max-height: none;
-        position: relative;
-      }
-      .hero__photo img {
-        height: 100%;
-        object-position: center top;
-      }
+      .hero { flex-direction: row; min-height: 100vh; }
+      .hero__photo { width: 50%; height: auto; max-height: none; }
+      .hero__photo img { height: 100%; object-position: center top; }
       .hero__text {
         width: 50%;
         display: flex;
@@ -126,16 +115,21 @@
       }
     }
 
-    /* ── SECTIONS ── */
-    section {
+    /* ── SECTIONS — full width dark bg ── */
+    .section-wrap {
+      width: 100%;
+      background-color: #0c0c14 !important;
+      border-top: 1px solid rgba(197,161,74,0.25);
+    }
+
+    .section-inner {
       max-width: 860px;
       margin: 0 auto;
       padding: 80px 32px;
-      border-top: 1px solid var(--rule);
     }
 
     @media (min-width: 600px) {
-      section { padding: 100px 48px; }
+      .section-inner { padding: 100px 48px; }
     }
 
     .section__label {
@@ -144,26 +138,24 @@
       font-weight: 500;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #c5a14a;
       margin-bottom: 36px;
     }
 
     /* ── ABOUT ── */
     .about__text {
       font-size: clamp(1.15rem, 2.5vw, 1.25rem);
-      color: var(--cream);
+      color: #f2ede4;
       line-height: 1.9;
       max-width: 700px;
     }
 
-    .about__text p + p {
-      margin-top: 1.4em;
-    }
+    .about__text p + p { margin-top: 1.4em; }
 
     /* ── TOUR CARD ── */
     .tour-card {
-      background: var(--bg2);
-      border: 1px solid var(--rule);
+      background-color: #111120 !important;
+      border: 1px solid rgba(197,161,74,0.25);
       padding: 36px 32px;
       display: flex;
       gap: 28px;
@@ -177,7 +169,7 @@
     .tour-card__accent {
       width: 3px;
       min-height: 80px;
-      background: var(--gold);
+      background-color: #c5a14a !important;
       flex-shrink: 0;
       margin-top: 4px;
     }
@@ -187,44 +179,30 @@
       font-size: 0.62rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #c5a14a;
       margin-bottom: 12px;
     }
 
     .tour-card__title {
       font-size: clamp(1.3rem, 3vw, 1.6rem);
       font-weight: 400;
-      color: var(--cream);
+      color: #f2ede4;
       margin-bottom: 12px;
       line-height: 1.3;
     }
 
     .tour-card__detail {
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
-      color: var(--grey);
-      font-style: italic;
-      line-height: 1.8;
+      font-size: clamp(1.15rem, 2.5vw, 1.25rem);
+      color: #f2ede4;
+      line-height: 1.9;
     }
 
     /* ── YOUTUBE ── */
     .youtube__intro {
-      font-size: clamp(1.1rem, 2.5vw, 1.2rem);
-      color: var(--grey);
-      font-style: italic;
+      font-size: clamp(1.15rem, 2.5vw, 1.25rem);
+      color: #f2ede4;
       margin-bottom: 36px;
-      line-height: 1.85;
-    }
-
-    /* Video grid — show up to 3 clickable thumbnails */
-    .youtube__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    @media (min-width: 600px) {
-      .youtube__grid { grid-template-columns: repeat(3, 1fr); }
+      line-height: 1.9;
     }
 
     .yt-thumb {
@@ -232,7 +210,7 @@
       display: block;
       text-decoration: none;
       overflow: hidden;
-      background: #000;
+      background-color: #000 !important;
       aspect-ratio: 16/9;
     }
 
@@ -241,10 +219,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.8;
-      transition: opacity 0.2s;
     }
-
-    .yt-thumb:hover img { opacity: 1; }
 
     .yt-thumb__play {
       position: absolute;
@@ -254,75 +229,56 @@
       justify-content: center;
     }
 
-    .yt-thumb__play svg {
-      width: 48px;
-      height: 48px;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
-    }
+    .yt-thumb__play svg { width: 48px; height: 48px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6)); }
 
     .youtube__channel-link {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      margin-top: 28px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #c5a14a;
       text-decoration: none;
-      border-bottom: 1px solid var(--gold-dim);
+      border-bottom: 1px solid #8a6f32;
       padding-bottom: 3px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .youtube__channel-link:hover {
-      color: var(--cream);
-      border-color: var(--cream);
     }
 
     /* ── CONTACT ── */
     .contact__intro {
-      font-size: clamp(1.1rem, 2.5vw, 1.2rem);
-      color: var(--grey);
-      font-style: italic;
+      font-size: clamp(1.15rem, 2.5vw, 1.25rem);
+      color: #f2ede4;
       margin-bottom: 36px;
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
     .contact__email {
       display: inline-block;
       font-size: clamp(1.15rem, 3vw, 1.5rem);
-      color: var(--cream);
+      color: #f2ede4;
       text-decoration: none;
-      border-bottom: 1px solid var(--gold-dim);
+      border-bottom: 1px solid #8a6f32;
       padding-bottom: 4px;
-      transition: color 0.2s, border-color 0.2s;
-      word-break: break-all;
-    }
-
-    .contact__email:hover {
-      color: var(--gold);
-      border-color: var(--gold);
     }
 
     /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--rule);
+    .footer-wrap {
+      width: 100%;
+      background-color: #0c0c14 !important;
+      border-top: 1px solid rgba(197,161,74,0.25);
       padding: 36px 32px;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.62rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--gold-dim);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+      color: #8a6f32;
     }
   </style>
 </head>
-<body>
+<body style="background-color:#0c0c14 !important;">
 
   <!-- HERO -->
   <header class="hero">
@@ -335,48 +291,47 @@
       <h1 class="hero__name">John<br>Sunderland</h1>
       <p class="hero__instrument">Piano</p>
       <div class="hero__rule"></div>
-      <p class="hero__tagline">A musician of rare depth — bringing a lifetime of artistry, passion and scholarship to the concert platform.</p>
+      <p class="hero__tagline">A musician of rare experience — bringing a lifetime of artistry, passion and leadership to the concert platform.</p>
     </div>
   </header>
 
   <!-- ABOUT -->
-  <section id="about">
-    <p class="section__label">About</p>
-    <div class="about__text">
-      <p>John Sunderland is a pianist, philanthropist, and former senior international banking executive. While studying at Gonville and Caius College, Cambridge, he seriously considered a career as a professional musician before embarking on a distinguished international career in banking and finance across London, New York, Hong Kong, and Australia — holding senior executive and advisory roles at Barclays, ANZ, PwC, and Ashmore Investment Management.</p>
-      <p>Music has remained a lifelong passion throughout. In recent years he has returned to the piano with renewed dedication — performing Mozart piano concertos and Beethoven chamber works, raising significant funds for music and cultural projects, and currently accompanying celebrated Swedish soprano Elisabet Strid on a recital tour across Europe.</p>
-    </div>
-  </section>
-
-  <!-- CURRENT ENGAGEMENT -->
-  <section id="tour">
-    <p class="section__label">Current Engagement</p>
-    <div class="tour-card">
-      <div class="tour-card__accent"></div>
-      <div>
-        <p class="tour-card__label">On Tour — 2026 / 2027</p>
-        <h2 class="tour-card__title">Nordic Dreams &amp; Wagnerian Drama</h2>
-        <p class="tour-card__detail">
-          Accompanying soprano Elisabet Strid in a programme of Scandinavian art songs — Grieg, Sibelius, Peterson-Berger, Stenhammar and others — and Wagner's Wesendonck Lieder and Liebestod from Tristan und Isolde.<br><br>
-          Performances in London, Stockholm and Barcelona confirmed. Further 2027 engagements available.
-        </p>
+  <div class="section-wrap" style="background-color:#0c0c14 !important;">
+    <div class="section-inner">
+      <p class="section__label">About</p>
+      <div class="about__text">
+        <p>John Sunderland is a pianist, philanthropist, and former senior international banking executive. While studying at Gonville and Caius College, Cambridge, he seriously considered a career as a professional musician before embarking on a distinguished international career in banking and finance across London, New York, Hong Kong, and Australia — holding senior executive and advisory roles at Barclays, ANZ, PwC, and Ashmore Investment Management.</p>
+        <p>Music has remained a lifelong passion throughout. In recent years he has returned to the piano with renewed dedication — performing Mozart piano concertos and Beethoven chamber works, raising significant funds for music and cultural projects, and currently accompanying celebrated Swedish soprano Elisabet Strid on a recital tour across Europe.</p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- CURRENT ENGAGEMENT -->
+  <div class="section-wrap" style="background-color:#0c0c14 !important;">
+    <div class="section-inner">
+      <p class="section__label">Current Engagement</p>
+      <div class="tour-card" style="background-color:#111120 !important;">
+        <div class="tour-card__accent" style="background-color:#c5a14a !important;"></div>
+        <div>
+          <p class="tour-card__label">On Tour — 2026 / 2027</p>
+          <h2 class="tour-card__title">Nordic Dreams &amp; Wagnerian Drama</h2>
+          <p class="tour-card__detail">
+            Accompanying soprano Elisabet Strid in a programme of Scandinavian art songs — Grieg, Sibelius, Peterson-Berger, Stenhammar and others — and Wagner's Wesendonck Lieder and Liebestod from Tristan und Isolde.<br><br>
+            Performances in London, Stockholm and Barcelona confirmed. Further 2027 engagements available.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- WATCH -->
-  <section id="watch">
-    <p class="section__label">Watch</p>
-    <p class="youtube__intro">Hear John perform — recordings from recent concerts and recitals.</p>
-
-    <div class="youtube__grid">
-      <a class="yt-thumb"
+  <div class="section-wrap" style="background-color:#0c0c14 !important;">
+    <div class="section-inner">
+      <p class="section__label">Watch</p>
+      <p class="youtube__intro">Hear John perform — recordings from recent concerts and recitals.</p>
+      <a class="yt-thumb" style="background-color:#000 !important;"
          href="https://www.youtube.com/channel/UCX_O-veVxU88zOBzH5pcyAw"
-         target="_blank" rel="noopener"
-         aria-label="Watch on YouTube">
-        <img src="https://img.youtube.com/vi/default/hqdefault.jpg"
-             alt="John Sunderland on YouTube"
-             onerror="this.style.display='none'">
+         target="_blank" rel="noopener">
         <span class="yt-thumb__play">
           <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
             <rect width="68" height="48" rx="10" fill="rgba(0,0,0,0.6)"/>
@@ -384,26 +339,27 @@
           </svg>
         </span>
       </a>
+      <a class="youtube__channel-link"
+         href="https://www.youtube.com/channel/UCX_O-veVxU88zOBzH5pcyAw"
+         target="_blank" rel="noopener">
+        View John's YouTube channel &nbsp;→
+      </a>
     </div>
-
-    <a class="youtube__channel-link"
-       href="https://www.youtube.com/channel/UCX_O-veVxU88zOBzH5pcyAw"
-       target="_blank" rel="noopener">
-      View John's YouTube channel &nbsp;→
-    </a>
-  </section>
+  </div>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <p class="section__label">Enquiries</p>
-    <p class="contact__intro">For concert bookings, recital enquiries, and touring engagements, please get in touch directly.</p>
-    <a class="contact__email" href="mailto:johnsunderland@pobox.com">johnsunderland@pobox.com</a>
-  </section>
+  <div class="section-wrap" style="background-color:#0c0c14 !important;">
+    <div class="section-inner">
+      <p class="section__label">Enquiries</p>
+      <p class="contact__intro">For concert bookings, recital enquiries, and touring engagements, please get in touch directly.</p>
+      <a class="contact__email" href="mailto:johnsunderland@pobox.com">johnsunderland@pobox.com</a>
+    </div>
+  </div>
 
   <!-- FOOTER -->
-  <footer>
-    <p>© 2027 John Sunderland &nbsp;·&nbsp; Pianist</p>
-  </footer>
+  <div class="footer-wrap" style="background-color:#0c0c14 !important;">
+    <p>© 2026 John Sunderland &nbsp;·&nbsp; Pianist</p>
+  </div>
 
 </body>
 </html>
